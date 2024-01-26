@@ -88,10 +88,10 @@ nav {
     color: var(--black);
 }
 
-#categoryList li a:hover {
+/*#categoryList li a:hover {
     background-color: var(--white);
     color: var(--black);
-}
+}*/
 
 /* Hovedinnhold */
 main {
