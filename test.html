@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Example</title>
+  <style>
+    /* Add some basic styling for demonstration purposes */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    .list-item {
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Create a container for the list items -->
+<div id="list-container"></div>
+
+<!-- Create a container for displaying selected item's content -->
+<div id="content-container">
+  <h2>Selected Item Content:</h2>
+  <p id="selected-content">Click on an item to display its content.</p>
+</div>
+
+<script>
+  // Sample list data
+  const listData = [
+    { id: 1, title: 'Item 1', content: 'Content for Item 1' },
+    { id: 2, title: 'Item 2', content: 'Content for Item 2' },
+    { id: 3, title: 'Item 3', content: 'Content for Item 3' },
+    // Add more items as needed
+  ];
+
+  // Function to render the list items
+  function renderList() {
+    const listContainer = document.getElementById('list-container');
+
+    listData.forEach(item => {
+      const listItem = document.createElement('div');
+      listItem.className = 'list-item';
+      listItem.textContent = item.title;
+
+      // Attach a click event listener to each list item
+      listItem.addEventListener('click', () => displayContent(item));
+
+      listContainer.appendChild(listItem);
+    });
+  }
+
+  // Function to display the content of the selected item
+  function displayContent(selectedItem) {
+    const contentContainer = document.getElementById('selected-content');
+    
+    // Update the content container with the selected item's content
+    contentContainer.textContent = `Content for ${selectedItem.title}: ${selectedItem.content}`;
+  }
+
+  // Call the renderList function when the page loads
+  window.onload = renderList;
+</script>
+
+</body>
+</html>

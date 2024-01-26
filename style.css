@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --black: #2A324B;
+    --white: #fff;
+    --lightGrey: #E1E5EE;
+    --darkGrey: #58699D;
+
+    --font: 'Montserrat', sans-serif;
+    --rootsize: 20px;
+    --maxsize: 1200px;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--rootsize);
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: var(--lightGrey);
+}
+
+/* Fikset tekst størrelser, fonter og farger*/
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+section li a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--darkGrey);
+}
+
+#categoryList li a{
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Hovedstruktur */
+#container {
+    width: 80%;
+    max-width: var(--maxsize);
+    min-height: 450px;
+
+    /* Kode for hvordan plasere innhold på midten av siden hentet fra: https://www.w3schools.com/howto/howto_css_center-vertical.asp*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigasjon/Kategorier */
+nav {
+    color: var(--white);
+    overflow: hidden;
+}
+
+#categoryList {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+
+}
+
+#categoryList li {
+    background-color: var(--black);
+    flex-grow: 1;
+}
+
+#categoryList li a {
+    display: block;
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+}
+
+#categoryList li a.selected {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#categoryList li a:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Hovedinnhold */
+main {
+    padding: 4rem;
+    background-color: var(--white);
+}
